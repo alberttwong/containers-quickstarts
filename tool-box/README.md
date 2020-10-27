@@ -1,5 +1,7 @@
 Sometimes you just need to manage or debug your kubernetes cluster with MongoDB in it.   This container can launched inside or outside a kubernetes cluster and contains many of the tools you'll need to manage your MongoDB container environment.  A sample use of this container could be the use case of performing tasks on a mongoDB cluster within a kubernetes cluster.   Instead of trying to connect to MongoDB from outside the kubernetes cluster, launch a container within the kubenetes cluster and run tasks from the inside.     Another use case is that I don't want to install the mongoDB tools.   In this case, just startup a container, use the tools and then exit the container.  No tools would be installed on the host. 
 
+This project inherits from https://github.com/redhat-cop/containers-quickstarts/tree/master/tool-box
+
 # What's in the box? 
 
 oc version 4.4.7.   
