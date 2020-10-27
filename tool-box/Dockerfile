@@ -31,16 +31,15 @@ RUN curl --fail -sL https://mirror.openshift.com/pub/openshift-v4/clients/ocp/${
 RUN curl --fail -sL https://mirror.openshift.com/pub/openshift-v4/clients/odo/${ODO_VERSION}/odo-linux-amd64 -o /usr/local/bin/odo && \
     chmod +x /usr/local/bin/odo
     
-RUN cat "[mongodb-enterprise-4.2]
-name=MongoDB Repository
-baseurl=https://repo.mongodb.com/yum/redhat/$releasever/mongodb-enterprise/4.2/$basearch/
-gpgcheck=1
-enabled=1
-gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc" > /etc/yum.repos.d/mongodb-enterprise-4.2.repo
+RUN printf '[mongodb-enterprise-4.2] \nname=MongoDB Repository \nbaseurl=https://repo.mongodb.com/yum/redhat/$releasever/mongodb-enterprise/4.2/$basearch/ \ngpgcheck=1 \nenabled=1 \ngpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc' > /etc/yum.repos.d/mongodb-enterprise-4.2.repo
 
 RUN yum install -y mongocli
 
 RUN yum install -y https://downloads.mongodb.com/compass/mongosh-0.5.0-x86_64.rpm
+
+RUN yum install -y https://repo.mongodb.com/yum/redhat/8/mongodb-enterprise/4.4/x86_64/RPMS/mongodb-enterprise-shell-4.4.1-1.el8.x86_64.rpm
+
+RUN yum install -y https://fastdl.mongodb.org/tools/db/mongodb-database-tools-rhel80-x86_64-100.2.0.rpm
 
 WORKDIR $HOME
 
