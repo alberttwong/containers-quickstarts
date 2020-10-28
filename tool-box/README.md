@@ -26,9 +26,9 @@ If you need something not here, let us know in an issue or submit a PR at https:
 
 ## OpenShift
 
-Run the container in OpenShift: `$ oc run -i -t tool-box-mongo --image=atwong/tool-box --rm bash` or use the UI and do container image deploy.
+To run the container in OpenShift and get a shell, you have 2 options. First option is to go to the correct project `$ oc project` and run the container `$ oc run -i -t tool-box-mongo --image=atwong/tool-box --rm bash`.  Another option is to use the UI and use the service catalog to perform a container image deploy.  Next, navigate to the pod and then click on terminal to get a shell.   To delete the pod after using it, delete the deployment or deployment config.
 
 ## Docker
 
-Run the container in the background, then shell into. There are important things the container does at boot that you don't want to override. If you need sudo for docker: `$ sudo docker run -it atwong/tool-box /bin/bash` or if you don't need sudo: `$ docker run -it atwong/tool-box /bin/bash`
+If you need sudo for docker: `$ sudo docker run -it atwong/tool-box /bin/bash` or if you don't need sudo: `$ docker run -it atwong/tool-box /bin/bash`
 
