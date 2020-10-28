@@ -12,6 +12,7 @@ git 2.18.4.
 unzip 6.0-43.   
 jq v1.6.    
 odo 1.2.1.   
+kubectl 1.18.     
 helm Client v3.2.1.   
 tkn Client v0.9.0.  
 MongoDB CLI 1.8  
