@@ -7,7 +7,7 @@ ENV OC_VERSION=4.5.10 \
     HELM_VERSION=v3.2.3 \
     TEKTON_VERSION=0.12.1 \
     HOME=/home/tool-box \
-    INSTALL_PKGS="git vim unzip python36"
+    INSTALL_PKGS="git vim unzip python36 iputils"
 
 RUN yum -y update && \
     yum -y install $INSTALL_PKGS && \
